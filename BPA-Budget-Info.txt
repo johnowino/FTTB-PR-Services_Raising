@@ -1,0 +1,86 @@
+Allow me to review and revert as I settle in back from leave. Seems this entire week is fully packed.
+
+ 
+
+Meanwhile find below as requested.
+
+ 
+
+FTTB BPAs
+
+1.         SOLITON TELMEC LTD - 516314
+
+2.         QUAVATEL LIMITED - 516313
+
+3.         Kinde - 516306
+
+4.         Camusat - 514807
+
+5.         Egypro - 516301
+
+6.         Extra D -522921 
+
+7.         Tetranet - 516311
+
+8.         Adrian - 516300
+
+9.         Pavicon – 516303
+
+10.       Hatikvah - 516305
+
+11.       Optimax - 516302
+
+12.       Techminds - 516315
+
+13.       Powergen - 516312 
+
+14.        Fireside - 516304
+
+15.        Huawei - 520027
+
+16.        ACL - 516294
+
+ 
+
+Kind Regards,
+
+ 
+
+Jabez
+
+
+
+C2 - Safaricom Internal
+
+From:
+John Edward Edward Owino <JOwino@Safaricom.co.ke>
+Sent: Tuesday, 17 October 2023 09:13
+To: Jabes Brian Otera <JOtera@Safaricom.co.ke>
+Cc: Robina Bosibori Maina <rmaina1@Safaricom.co.ke>
+Subject: FTTB PR Rarising AUtomation Project
+ 
+
+Hi Jabes,
+
+ 
+
+Kindly share the following data to support the documentation of the FTTB PR raising automation process:
+
+ 
+
+BPA's for FTTB Rollout-As Above
+Current FTTB Project number-FY24_0117_FTTB Rollout_01
+Confirm that the SFC Accounting Flexfield is : 01-1001-0000-91210-000-00000-00-Correct
+Meanwhile, when you get a chance in your busy schedule, please review the attached process and check if it accurately captures the actual human process.
+
+ 
+
+Regards,
+
+ 
+
+JO
+
+ 
+
+ 

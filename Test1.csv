@@ -1,0 +1,506 @@
+Column-0,Column-1,Column-2,Column-3,Column-4,Column-5,Column-6,Column-7,Column-8,Column-9,Column-10,Column-11,Column-12,Column-13,Column-14,Column-15,Column-16,Column-17,Column-18,Column-19
+"Requesting Org
+
+","Number
+
+","Line
+
+","Rev
+
+","Item
+
+","Description
+
+","Category
+
+","Quantity
+
+","UOM
+
+","Price
+
+","Amount
+
+","Requester
+
+","Need-By
+
+","Qty Delivered
+
+","Location
+
+","Order Number
+
+","Purchasing Org
+
+","Contract Num
+
+","Ver
+
+","[ ]
+
+"
+"Safaricom
+
+","728144
+
+","1
+
+",,"DEV09527
+
+","Firewall - FortiGate-100F - FG-100F : .
+
+","TERMINALS.DEVICES.BROADBAND.CUSTOMER PREMISES EQUIPMENT
+
+","4
+
+","Each
+
+","159,730.90 
+
+","638,923.60 
+
+","Wachira, Mr. Ben Njiri
+
+","16/1/23 00:00
+
+","4
+
+","Andy Distribution Centre: ADC
+
+","468695
+
+","Safaricom
+
+",,,"..
+
+"
+"Safaricom
+
+","728144
+
+","2
+
+",,,"Advanced Threat Protection (IPS, Advanced Malware Protection Service, ","IT.IT LICENCES.ENTERPRISE SOLUTIONS.RESALE LICENSES
+
+","4
+
+","Each
+
+","393,090.60 
+
+","1,572,362.40 
+
+","Wachira, Mr. Ben Njiri
+
+","16/1/23 00:00
+
+","4
+
+","Safaricom House
+
+","468695
+
+","Safaricom
+
+",,,"..
+
+"
+"Safaricom
+
+","728144
+
+","3
+
+",,"DEV09529
+
+","Firewall - FortiGate-70F - FG-70F : .
+
+","TERMINALS.DEVICES.BROADBAND.CUSTOMER PREMISES EQUIPMENT
+
+","85
+
+","Each
+
+","43,474.90 
+
+","3,695,366.50 
+
+","Wachira, Mr. Ben Njiri
+
+","16/1/23 00:00
+
+","85
+
+","Andy Distribution Centre: ADC
+
+","468695
+
+","Safaricom
+
+",,,"..
+
+"
+"Safaricom
+
+","728144
+
+","4
+
+",,,"Advanced Threat Protection (IPS, Advanced Malware Protection Service, ","IT.IT LICENCES.ENTERPRISE SOLUTIONS.RESALE LICENSES
+
+","85
+
+","Each
+
+","107,052.40 
+
+","9,099,454.00 
+
+","Wachira, Mr. Ben Njiri
+
+","16/1/23 00:00
+
+","85
+
+","Safaricom House
+
+","468695
+
+","Safaricom
+
+",,,"..
+
+"
+"Safaricom
+
+","728144
+
+","5
+
+",,"DEV08522
+
+",SP-RACKTRAY-02 Rack mount tray for all FortiGate E series and F ,"TERMINALS.DEVICES.BROADBAND.CUSTOMER PREMISES EQUIPMENT
+
+","43
+
+","Each
+
+","15,379.70 
+
+","661,327.10 
+
+","Wachira, Mr. Ben Njiri
+
+","16/1/23 00:00
+
+","43
+
+","Andy Distribution Centre: ADC
+
+","468695
+
+","Safaricom
+
+",,,"..
+
+"
+"Safaricom
+
+","728144
+
+","6
+
+",,"DEV09530
+
+","Switch - FortiSwitch-124F - FS-124F : .
+
+","TERMINALS.DEVICES.BROADBAND.CUSTOMER PREMISES EQUIPMENT
+
+","44
+
+","Each
+
+","31,122.70 
+
+","1,369,398.80 
+
+","Wachira, Mr. Ben Njiri
+
+","16/1/23 00:00
+
+","44
+
+","Andy Distribution Centre: ADC
+
+","468695
+
+","Safaricom
+
+",,,"..
+
+"
+"Safaricom
+
+","728144
+
+","7
+
+",,,"24x7 FortiCare Contract - FC-10-S124N-247-02-36 : .
+
+","IT.IT LICENCES.ENTERPRISE SOLUTIONS.RESALE LICENSES
+
+","44
+
+","Each
+
+","17,075.10 
+
+","751,304.40 
+
+","Wachira, Mr. Ben Njiri
+
+","16/1/23 00:00
+
+","44
+
+","Safaricom House
+
+","468695
+
+","Safaricom
+
+",,,"..
+
+"
+"Safaricom
+
+","728144
+
+","8
+
+",,,FortiAnalyzer-VM Subscription License with Support - FC1-10-AZVMS-,"IT.IT LICENCES.ENTERPRISE SOLUTIONS.RESALE LICENSES
+
+","2
+
+","Each
+
+","281,557.50 
+
+","563,115.00 
+
+","Wachira, Mr. Ben Njiri
+
+","16/1/23 00:00
+
+","2
+
+","Safaricom House
+
+","468695
+
+","Safaricom
+
+",,,"..
+
+"
+"Safaricom
+
+","728144
+
+","9
+
+",,,FortiManager-VM Subscription License with Support and BPS - FC2-,"IT.IT LICENCES.ENTERPRISE SOLUTIONS.RESALE LICENSES
+
+","1
+
+","Each
+
+","1,837,934.70 
+
+","1,837,934.70 
+
+","Wachira, Mr. Ben Njiri
+
+","16/1/23 00:00
+
+","1
+
+","Safaricom House
+
+","468695
+
+","Safaricom
+
+",,,"..
+
+"
+"Safaricom
+
+","728144
+
+","10
+
+",,,Professional Services - Onsite Resource Service (SOW) - FP-10-00000-,"IT.IT LICENCES.ENTERPRISE SOLUTIONS.RESALE LICENSES
+
+","20
+
+","Each
+
+","344,166.20 
+
+","6,883,324.00 
+
+","Wachira, Mr. Ben Njiri
+
+","16/1/23 00:00
+
+","20
+
+","Safaricom House
+
+","468695
+
+","Safaricom
+
+",,,"..
+
+"
+"Safaricom
+
+","728144
+
+","11
+
+",,"DEV09529
+
+","Firewall - FortiGate-70F - FG-70F : Standby Units
+
+","TERMINALS.DEVICES.BROADBAND.CUSTOMER PREMISES EQUIPMENT
+
+","2
+
+","Each
+
+","43,353.80 
+
+","86,707.60 
+
+","Wachira, Mr. Ben Njiri
+
+","16/1/23 00:00
+
+","2
+
+","Andy Distribution Centre: ADC
+
+","468695
+
+","Safaricom
+
+",,,"..
+
+"
+"Safaricom
+
+","728144
+
+","12
+
+",,"DEV09530
+
+","Switch - FortiSwitch-124F - FS-124F : Standby Units
+
+","TERMINALS.DEVICES.BROADBAND.CUSTOMER PREMISES EQUIPMENT
+
+","4
+
+","Each
+
+","31,122.70 
+
+","124,490.80 
+
+","Wachira, Mr. Ben Njiri
+
+","16/1/23 00:00
+
+","4
+
+","Andy Distribution Centre: ADC
+
+","468695
+
+","Safaricom
+
+",,,"..
+
+"
+"Safaricom
+
+","728144
+
+","13
+
+",,"DEV09531
+
+","Power Adapter - AC power adaptor - SP-FG60E-PDC-5 : Standby Units
+
+","TERMINALS.DEVICES.BROADBAND.CUSTOMER PREMISES EQUIPMENT
+
+","2
+
+","Each
+
+","36,693.30 
+
+","73,386.60 
+
+","Wachira, Mr. Ben Njiri
+
+","16/1/23 00:00
+
+","2
+
+","Andy Distribution Centre: ADC
+
+","468695
+
+","Safaricom
+
+",,,"..
+
+"
+"Safaricom
+
+","728144
+
+","14
+
+",,,"DDP NBO : .
+
+","TERMINALS.SERVICES.CUSTOMER PREMISES EQUIPMENT.SUPPORT
+
+","1
+
+","Each
+
+","2,731,500.00 
+
+","2,731,500.00 
+
+","Wachira, Mr. Ben Njiri
+
+","16/1/23 00:00
+
+","1
+
+","Safaricom House
+
+","468696
+
+","Safaricom
+
+",,,"..
+
+"
