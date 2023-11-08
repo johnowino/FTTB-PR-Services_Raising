@@ -1,0 +1,240 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Data_Entry_Test" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="603.3333333333334,3355.3333333333335" sap2010:WorkflowViewState.IdRef="Data_Entry_Test_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Data_Entry_Test" sap:VirtualizedContainerService.HintSize="592,3290.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="BpaOptimax" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Oracle iProcurement: Shop" sap:VirtualizedContainerService.HintSize="530,3180" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="a7201b1a-a2bb-4d1c-b3c7-45bc0961f6c7" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,2960.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ReadCsvFile DataTable="[BpaOptimax]" Delimitator="Comma" DisplayName="Read CSV" FilePath="BPA_516302_Details.csv" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Clear'" sap:VirtualizedContainerService.HintSize="434,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a7201b1a-a2bb-4d1c-b3c7-45bc0961f6c7" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://erpprod.safaricom.net/OA_HTML/OA.jsp?page=/oracle/apps/icx/icatalog/shopping/webui/AdvSearchPG&amp;_ti=377205913&amp;retainAM=Y&amp;addBreadCrumb=Y&amp;oapc=59&amp;oas=RR-U5RiO6FyEn5fdQ8wccg.." CvElementArea="313, 891, 69, 33" CvTextArea="323, 897, 49, 18" CvTextArgument="Clear" CvType="Button" DesignTimeRectangle="315, 893, 65, 29" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Clear'" FullSelectorArgument="&lt;webctrl id='mainTableLayout_SaveSearch' tableRow='3' tag='TABLE' /&gt;&lt;webctrl id='Clear' tableRow='43' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mainTableLayout_SaveSearch' tag='TABLE' /&gt;&lt;webctrl id='Clear' type='submit' tag='BUTTON' class='x80' aaname='Click to reset the Advanced Search page.' check:innerText='Clear' /&gt;" Guid="c0f10979-3fc6-4fc3-ab0e-d05941c02fea" InformativeScreenshot="8af17dc2acc297f8fb473d08cb9a7789.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Oracle iProcurement: Shop' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvElementArea="254, 891, 49, 34" CvTextArea="264, 897, 28, 18" CvTextArgument="Go" CvType="Button" DesignTimeRectangle="257, 893, 45, 29" ElementType="Button" FriendlyName="'Go'" FullSelectorArgument="&lt;webctrl id='mainTableLayout_SaveSearch' tableRow='3' tag='TABLE' /&gt;&lt;webctrl id='Go' tableRow='43' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mainTableLayout_SaveSearch' tag='TABLE' /&gt;&lt;webctrl id='Go' type='submit' tag='BUTTON' class='x80' aaname='Click to perform an Advanced Search.' check:innerText='Go' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADEAAAAhCAYAAABwSkOHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAJkSURBVFhH7ZjbTttAEIb9fDRQ3iYnHoNDDW8BKg5wW6l3VRwgNBKIQ4E4seOcHmC6Y++ux5tdOxGRsCNW+jVMZmb9f0xyYws24HxBFOWkIB5ePPjd7sGvP3eFFfpDn/RICCzc3r9AMJ7AdD6HyWzO46xQOfpDnxREQiBhMJlGQxM+pI+fX0ef6FccCYGrGk9nTNNSRPQrzgJEyJvCaKC4uREiZGsaMZUhGiGwoSwyQuAvfzX1wN61wLIU7Z5AV9u/PmVC+EqzMb/aWzSvqHG1wn0r5kYIPxzDkCk33pzAN43pRe3BuW5+DdEIgQ356sHRd2K0fpmuK4D1S1KLpMyj1DuWkBFiMAphEDBlxc5xYrJ+oe+7jnvqF/rPUwBSTfip3pMRMyE8bBISQyT3Wk3+0G04utbUlTyp/yUbYIZFXfmn5D6f/22E8IIR9P0ReExR1OWOgKjAYYfWW1ATZqhqrbju2tJszSH3sdixK7y/CWfyvqSuy40Q2JArCZGYiWWGSM9V4MClczk1gzIh3oeBlMhTsW3DFjGY1B09RNWJ606Df8aMtpX7KQSvpepKROVCYBTS5Wc1YnLHBlep9/07ONjhdQ6BXycBTzeI/S79Oi3xfIxGCGxYSnQbOdr60eVz3QTMakRmF+5iwKnnZOjjECj59TCr6igzWfBso23amyMjxNvAX1mnVY2h6rm2N9Yt7MuNLNOvV+YmaGOR87Vu4rO02RCv3rA02nyIf/1BKaIWAt/jPL97UUPRhT61753wjZrbe4SnNy+iLarQH/rUvgHEgwUkxFUVVeiPAuBJQZTzAPwH3IFMvEmrWc0AAAAASUVORK5CYII=" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[BpaOptimax]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="434,2451.3333333333335" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,2261.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="Description" />
+                      <Variable x:TypeArguments="x:String" Name="Supplier" />
+                      <Variable x:TypeArguments="x:String" Name="SupplierSite" />
+                      <Variable x:TypeArguments="x:String" Name="Price" />
+                      <Variable x:TypeArguments="x:String" Name="Quantity" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Description" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="334,192.66666666666666" sap2010:WorkflowViewState.IdRef="GetRowItem_1" Row="[CurrentRow]">
+                      <ui:GetRowItem.Value>
+                        <OutArgument x:TypeArguments="x:String">[Description]</OutArgument>
+                      </ui:GetRowItem.Value>
+                    </ui:GetRowItem>
+                    <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Supplier" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="334,192.66666666666666" sap2010:WorkflowViewState.IdRef="GetRowItem_2" Row="[CurrentRow]">
+                      <ui:GetRowItem.Value>
+                        <OutArgument x:TypeArguments="x:String">[Supplier]</OutArgument>
+                      </ui:GetRowItem.Value>
+                    </ui:GetRowItem>
+                    <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Site" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="334,192.66666666666666" sap2010:WorkflowViewState.IdRef="GetRowItem_3" Row="[CurrentRow]">
+                      <ui:GetRowItem.Value>
+                        <OutArgument x:TypeArguments="x:String">[SupplierSite]</OutArgument>
+                      </ui:GetRowItem.Value>
+                    </ui:GetRowItem>
+                    <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Price" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="334,192.66666666666666" sap2010:WorkflowViewState.IdRef="GetRowItem_4" Row="[CurrentRow]">
+                      <ui:GetRowItem.Value>
+                        <OutArgument x:TypeArguments="x:String">[Price]</OutArgument>
+                      </ui:GetRowItem.Value>
+                    </ui:GetRowItem>
+                    <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Quantity" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="334,192.66666666666666" sap2010:WorkflowViewState.IdRef="GetRowItem_5" Row="[CurrentRow]">
+                      <ui:GetRowItem.Value>
+                        <OutArgument x:TypeArguments="x:String">[Quantity]</OutArgument>
+                      </ui:GetRowItem.Value>
+                    </ui:GetRowItem>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Description'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="a7201b1a-a2bb-4d1c-b3c7-45bc0961f6c7" Text="[Description]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://erpprod.safaricom.net/OA_HTML/OA.jsp?page=/oracle/apps/icx/icatalog/shopping/webui/AdvSearchPG&amp;_ti=377205913&amp;retainAM=Y&amp;addBreadCrumb=Y&amp;oapc=59&amp;oas=RR-U5RiO6FyEn5fdQ8wccg.." CvElementArea="524, 675, 191, 30" CvType="InputBox" DesignTimeRectangle="527, 677, 187, 26" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'INPUT Value_1'" FullSelectorArgument="&lt;webctrl tableCol='11' tableRow='6' tag='TABLE' /&gt;&lt;webctrl id='Value_1' tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='Value_1' type='text' tag='INPUT' class='x8' aaname='Description' /&gt;" Guid="4b9ef231-5a8d-4c53-9407-377f1afebeb4" InformativeScreenshot="5feaa20fd5322578728e8ef80f1e06f9.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Oracle iProcurement: Shop' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target CvTextArea="129, 680, 100, 21" CvTextArgument="Description" CvType="Text" DesignTimeRectangle="126, 678, 114, 24" ElementType="Text" FriendlyName="'Description'" FullSelectorArgument="&lt;webctrl tableRow='6' tag='TABLE' /&gt;&lt;webctrl id='DescriptionText' tableRow='1' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='DescriptionText' type='' tag='LABEL' class='xc xj1' aaname='Description' check:innerText='Description' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHYAAAAcCAYAAAC0yEstAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAIuSURBVGhD7ZfhccMgDIW7obfxKjnvEc+RyxbJFNQmGB7iQahJG4fq3emPEbKkT4bky6i6lILtVAq2UynYTqVgO5WC7VQKtlM9AXsz8ziYYcjZZK7O89iCOk77M76dRzOM8xJt02vi/oYawT5sujj3w6odwPXk9v8nsMMwmvnutnQqDva4qgdLJtIXu9h4FuVeJr9mjTbkaib0sZY53u+zGYVvdFLA+nTBuGs8UkfkLwcYc2A5LmbjlPpDPoqSz7omepb09AdqAhutAzh7F0GCwSoaZk3AlUMC5osn4K3lAOT8vW2n0A6wxdhYG+zP2F64jWARoksYigpJheb4Zx4WHONP9obhwYak700Gg9UR+fMcsOb6O5bktorGRV84gdB359H/crAJaCf/fEs0+golCBAbgEU2HhYNzUinvAxW+rMaqsFCXPmjMo0L+wXA1jv95WDx3uVGigJLoGTAJio0lNZR8ifvrAZbyjdZy/f3zWBh3SVQD3YTv8N8sxUsvK9eTWDD1xrW2TFWr3RQQjMEAPscmtcA9hBH8dvAFo03ODQsLSAUGU92+OK34tmPJ/Rz+xvA5vLHZleDxWc43DQu2//QIcDKiQ9Nl4YQM38jnEUx4atNjID6OVhm8cBFp9NqNk4GTCn208F46M1gC8dtAoP7siFIwSwizYrgN4Bd/eM8WK5iEG3D82Bo70o+fwu2YxUH4fOlYBVsZ1KwnUrBqj5RCrZTKdhOpWC7lDHfB/oMzUqAnncAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Price'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="a7201b1a-a2bb-4d1c-b3c7-45bc0961f6c7" Text="[Price]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://erpprod.safaricom.net/OA_HTML/OA.jsp?page=/oracle/apps/icx/icatalog/shopping/webui/AdvSearchPG&amp;_ti=377205913&amp;retainAM=Y&amp;addBreadCrumb=Y&amp;oapc=59&amp;oas=RR-U5RiO6FyEn5fdQ8wccg.." CvElementArea="524, 767, 193, 29" CvType="InputBox" DesignTimeRectangle="527, 769, 187, 26" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'INPUT Value_4'" FullSelectorArgument="&lt;webctrl tableCol='11' tableRow='21' tag='TABLE' /&gt;&lt;webctrl id='Value_4' tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='Value_4' type='text' tag='INPUT' class='xa' aaname='Price' /&gt;" Guid="4e44e2bb-00d9-4209-812c-12883ddd2a91" InformativeScreenshot="0d069a3bb95fa32bf106932a36ac5c9b.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Oracle iProcurement: Shop' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target CvTextArea="183, 773, 46, 18" CvTextArgument="Price" CvType="Text" DesignTimeRectangle="181, 770, 59, 24" ElementType="Text" FriendlyName="'Price'" FullSelectorArgument="&lt;webctrl tableRow='21' tag='TABLE' /&gt;&lt;webctrl id='UnitPriceText' tableRow='1' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='UnitPriceText' type='' tag='LABEL' class='xc xj1' aaname='Price' check:innerText='Price' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD8AAAAcCAYAAADWZ2dHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAEmSURBVFhH7ZWLDYQgDEBvQ7ZhFcMeModxC52i5yGfAgVP8UJOeEkTo0V9bdEXNEyXb5Uu3ypdvlW6fJoFJGfAWCo4yFWnHoLuNcz6XF0K5fcQk07P8lB5xuWW+X98L090ax5MAQSoq6sErgsiphmEPt6vZ+6F1pkgp2kSXk5p0X8m74Vam7hXKISCj05tGTmZY599gXvH3pMPX4qSR9Nhu4ifGRfVFcStxUU6ww3y6ItPvqSBkLdd9/8aqstopF3X/YLa8xfHv1A+6C6Sj/fs9/Ihbnul4troF+35iC6/55+TD/LVeVeQ1NiXUld+U4k/eLjTugDkt+TkuxFUlt9A3Y8C5aVHP79lctSX/4DWmSB/X1GhyrbBgfyz6fKt0uVbpcu3CcAbw5iQK2v36ckAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Supplier'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="a7201b1a-a2bb-4d1c-b3c7-45bc0961f6c7" Text="[Supplier]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://erpprod.safaricom.net/OA_HTML/OA.jsp?page=/oracle/apps/icx/icatalog/shopping/webui/AdvSearchPG&amp;_ti=377205913&amp;retainAM=Y&amp;addBreadCrumb=Y&amp;oapc=59&amp;oas=RR-U5RiO6FyEn5fdQ8wccg.." CvElementArea="525, 736, 226, 30" CvType="InputBox" DesignTimeRectangle="530, 739, 182, 24" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'INPUT Value_3'" FullSelectorArgument="&lt;webctrl tableCol='11' tableRow='16' tag='TABLE' /&gt;&lt;webctrl id='Value_3' tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='Value_3' type='text' tag='INPUT' class='x8' aaname='Supplier' /&gt;" Guid="ad930d07-300e-4076-a60f-d504b232ea8f" InformativeScreenshot="bc641d5680f776e5e4350205fb0ca14a.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Oracle iProcurement: Shop' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target CvTextArea="156, 740, 75, 22" CvTextArgument="Supplier" CvType="Text" DesignTimeRectangle="153, 739, 87, 24" ElementType="Text" FriendlyName="'Supplier'" FullSelectorArgument="&lt;webctrl tableRow='16' tag='TABLE' /&gt;&lt;webctrl id='SupplierText' tableRow='1' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='SupplierText' type='' tag='LABEL' class='xc xj1' aaname='Supplier' check:innerText='Supplier' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFsAAAAcCAYAAAAOa8NNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAGsSURBVGhD7ZftccIwDIa7YbbxKlz2IHNw2SJM4Rpw4te2/KGkiHDVc6c/qYLkx0Jcf6wihsoWRGULorIFUdmCqGxBVLYgnbJnOw6DHZIYb/7Pp2Kxk/E9XubKM3nasm9jJDgNc1184ln4WtnQZDGMne4+/RScQyxFQzasj7RxmPhtuu+TNf5ZvGKIz4ly00sd3RsAJ5c72ek310wuG4hq4zpN67bpl90zwTtl0wH1OLkM2cvVwGdggMhS7fTSOmju7FJD5K7eLbsgdk9ur2x4N5wl9El9W/dMM9L+gXTMl7UYEduBHNAYR3Z6ceGC/eE4uZ2y8/debM/XdVKpzaVL9kpzynfKjnMd2x71U8zJ7ZRdHaBn5Bed1WbCkh0DAokpUNk5Vdk4yXkhOECzse9ZIxlSsrFQNbZDEdP+eIpTRMhu/uhxcjtl47vhAut575XtKO3pEHB4bLYUpEAqClLJKPRQvYDaKqFrv132C5hYDGg8kAp/NN7e2fHBk682J5ch+0n6T02j9hEO/EAehHOIPzzwJ1HZgqhsQVS2IJ+T/Q9R2YKobEFUthjW/gLDhERUKaVA7AAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Supplier Site'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,222.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="a7201b1a-a2bb-4d1c-b3c7-45bc0961f6c7" Text="[SupplierSite]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://erpprod.safaricom.net/OA_HTML/OA.jsp?page=/oracle/apps/icx/icatalog/shopping/webui/AdvSearchPG&amp;_ti=377205913&amp;retainAM=Y&amp;addBreadCrumb=Y&amp;oapc=59&amp;oas=RR-U5RiO6FyEn5fdQ8wccg.." CvElementArea="525, 857, 270, 32" CvTextArea="741, 869, 13, 15" CvTextArgument="s" CvType="InputBox" DesignTimeRectangle="530, 861, 227, 24" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'INPUT Value_7'" FullSelectorArgument="&lt;webctrl tableCol='11' tableRow='38' tag='TABLE' /&gt;&lt;webctrl id='Value_7' tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='Value_7' type='text' tag='INPUT' class='x8' aaname='Supplier Site' /&gt;" Guid="77663255-ed62-4beb-a173-cb593bb979ae" InformativeScreenshot="e38c047b88328fdd8cb780439d5eb2e6.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Oracle iProcurement: Shop' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target CvTextArea="119, 864, 111, 21" CvTextArgument="Supplier Site" CvType="Text" DesignTimeRectangle="115, 862, 125, 24" ElementType="Text" FriendlyName="'Supplier Site'" FullSelectorArgument="&lt;webctrl tableRow='38' tag='TABLE' /&gt;&lt;webctrl id='item8' tableRow='1' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='item8' type='' tag='LABEL' class='xc xj1' aaname='Supplier Site' check:innerText='Supplier Site' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIEAAAAcCAYAAABGWNzNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAIsSURBVGhD7ZjRcYMwEETTId3Qioc+TB0eurCrUBQi4CSdpFscApnsm7kffKBltUgafzjy72EICENAGALiYQgIQ0AYAuIxhmByQ9e5LqnhEX6+FE839kHjbapcOxqrZ2Vtz3vvun70HcfSDsFjyF5EVn8/WiLKBUIAeaZrm27h2vkhEAKL1bvxFdovwS9PeMbPeHahEIglLTVUpH1N9mt0fbgWL3vKc6Le1LjB3yFAetUQVIKRfrWp6dHYcolPx10APcu06dtI9KyWZhB7CCxf/M4Q6CXGQ3qBEMx7bvScpcQEl8aWkxIBegaGwKQZpHkmKA2qngV2h6Aw4Xt6rSEQ927vsunUVjer0ZBnhYCq24FVM0j7YOhZBWklhEuRSAhS8ZuJwXSk1xiC/L5v1uuL+ZWxa5g9A0Jg1gxiCsHCJiKu1ZydIYh7PeueF756pFc1Nb9WnaS58gBmYxtoegaEwKwZBApBjJhY5athCDQUz1S9Qt/ZIZApzg0Q4puG/Z3tIAMMAeyZqlcPgVkzSH0lEAZUaxWvJT1JsBKC5mEP6VVNVa6Je6tLs+gzrQSR1kpV9eohMGsGaW4HMtl6iUmRgkqlmKtXYbLVKmiwGp2VPrYpBJ7dnglt2TPCbybNIMYzgfjCZQnRG2kQvsS1zwTxyyXLHdILhGAm/eOlMbYdq2clbcn9ckVoaQZ542D4Joi5uyeCWGAICENAGALiOS8E5DIwBIQhIAwBcc59AgqpLm97xuDoAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+            </ui:ForEachRow>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-11, -11, 1942, 1042" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="e9873e430438fad85da79db84b889600.jpg" Selector="&lt;html app='chrome.exe' title='Oracle iProcurement: Shop' /&gt;" Title="Oracle iProcurement: Shop" Url="https://erpprod.safaricom.net/OA_HTML/OA.jsp?page=/oracle/apps/icx/icatalog/shopping/webui/AdvSearchPG&amp;_ti=377205913&amp;retainAM=Y&amp;addBreadCrumb=RS&amp;oapc=53&amp;oas=G-luWUVXBe_NrjLf0dkv-Q.." />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
