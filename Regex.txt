@@ -1,0 +1,11 @@
+version 1
+(?<=Name: )\w*-\w*-\w*.\w*.\w*\w*\W\w*\n\w*\W*\w*\w*\W*\W
+
+Version 2
+(?<=Name: )\w*-
+
+Version 3
+(?<=Name: )\w*-\w*
+
+Version 4
+(?<=Name: )\w*.{10}

@@ -1,63 +1,65 @@
 Project Overview :
 
-Name: POWERGEN_FTTB_2023_2024-NBI249225-MOONZ PLAZA (SHIBAM
-RESTAURANT LTD)
+Name: EGYPRO_FTTB_2023_2024_NBI349232_ARCHDIOCESE OF
+NAIROBI_LITTLE PRINCE PRIMARY SCHOOL KIBERA
 Description:
-Project leader: POWERGEN TECHNOLOGIES LTD
+Project leader: EGYPRO
 Customer: SAFARICOM PLC
 Status: In Progress
-Start: 10/15/2023 10:45:09 AM
-Finish: 10/22/2023 10:45:09 AM
+Start: 7/15/2023 8:36:58 AM
+Finish: 7/22/2023 8:36:58 AM
 
 Item Description Costs
-Service Costs Ksh 91,187.52
-Material costs Ksh 23,878.76
-Total Excluding VAT Ksh 115,066.28
+Service Costs Ksh 191,996.52
+Material costs Ksh 86,443.84
+Total Excluding VAT Ksh 278,440.36
 
-Report Created By cowuor Christine Owuor
-POWERGEN_FTTB_2023_2024-NBI249225-MOONZ PLAZA (SHIBAM Created: Tuesday, October 17, 2023
-RESTAURANT LTD)Section A Service Costs
+Report Created By tchepkorir Susan Terer
+<TChepkorir@Safaricom.co.ke>
+EGYPRO_FTTB_2023_2024_NBI349232_ARCHDIOCESE OF NAIROBI_LITTLE Created: Wednesday, October 18, 2023
+PRINCE PRIMARY SCHOOL KIBERASection A Service Costs
 Item Description Price / m QTY Total
 Linearised Rate for Fiber Deployment
 
 Total Linearised Rate : Ksh .00
 Item Description UOM Price QTY Total
-Installation of 1, 2, 4 core drop cable for ISP m 35.00 50 1,750.00
-Installation of Aerial Cable m 43.00 150 6,450.00
+Installation of Aerial Cable m 43.00 612 26,316.00
 Installation of ATB pce 528.00 1 528.00
-Installation of FAT 12, 24, 48 ports pce 880.00 1 880.00
 As-Built Documentation soft and hard copies BF m 5.28 3 15.84
 GIS based survey & design BF m 16.00 3 48.00
 Project Management BF m 44.00 3 132.00
 Trenching up to 1.2m deep, lay ducts and reinstate m 610.72 3 1,832.16
-As built documents m 5.28 34 179.52
-Field detailed survey report m 16.00 34 544.00
-Project Management Aerial Incl of H&S per meter m 47.00 34 1,598.00
-Pole Down-lead clamp, Supply and Installation pce 1,500.00 1 1,500.00
-Pole Cable Bracket, Supply and Installation pce 2,200.00 1 2,200.00
-Pole, Supply & installation Wooden 8m pce 11,000.00 1 11,000.00
-Pole, Supply & installation Wooden 10m pce 13,500.00 1 13,500.00
-Supply and installation of Universal Pole bracket pce 1,250.00 3 3,750.00
-Pole Tension Clamp, Supply and Installation pce 2,300.00 4 9,200.00
+Supply, Install corrugated PVC pipe m 80.00 4 320.00
+Supply, Install PlasticTrunking size 38*25mm m 90.00 64 5,760.00
+As built documents m 5.28 259 1,367.52
+Field detailed survey report m 16.00 259 4,144.00
+Project Management Aerial Incl of H&S per meter m 47.00 259 12,173.00
+Pole Down-lead clamp, Supply and Installation pce 1,500.00 3 4,500.00
+Pole Cable Bracket, Supply and Installation pce 2,200.00 3 6,600.00
+Pole, Supply & installation Wooden 8m pce 11,000.00 4 44,000.00
+Pole Tangent Support, Supply and Installation pce 1,800.00 5 9,000.00
+Supply and installation of Universal Pole bracket pce 1,250.00 11 13,750.00
+Pole Tension Clamp, Supply and Installation pce 2,300.00 24 55,200.00
+Core Drilling per unit pce 150.00 1 150.00
 ISP Building As built documents per building pce 880.00 1 880.00
 ISP Building Survey, Design per building pce 4,400.00 1 4,400.00
-ISP Building Acquisition pce 30,800.00 1 30,800.00
-Total Brown Field : Ksh 91,187.52
+Splicing, Testing and Commissioning  1 Core pce 440.00 2 880.00
+Total Brown Field : Ksh 191,996.52
 
-Report Created By cowuor Christine Owuor
-POWERGEN_FTTB_2023_2024-NBI249225-MOONZ PLAZA (SHIBAM Created: Tuesday, October 17, 2023
-RESTAURANT LTD)Section B Material costs
+Report Created By tchepkorir Susan Terer
+<TChepkorir@Safaricom.co.ke>
+EGYPRO_FTTB_2023_2024_NBI349232_ARCHDIOCESE OF NAIROBI_LITTLE Created: Wednesday, October 18, 2023
+PRINCE PRIMARY SCHOOL KIBERASection B Material costs
 Item Description UOM Price QTY Total
-ADSS fiber cable, 100m s/s clear span 24xSM G652D meter 100.00 150 15,000.00
-Indoor LSZH -Drop-2.657A1 (bow type) meter 25.19 50 1,259.50
+HDPE Low Friction, Silicon lined 32/26mm-New meter 83.84 26 2,179.84
+ADSS fiber cable, 100m s/s clear span 48xSM G652D meter 137.00 612 83,844.00
 2 core Access terminal box (ATB) Piece 420.00 1 420.00
-HDPE Low Friction, Silicon lined 32/26mm-New meter 83.84 14 1,173.76
-FAT 12 Port wall mounted Indoor plastic Piece 6,025.50 1 6,025.50
-Total Material costs : Ksh 23,878.76
+Total Material costs : Ksh 86,443.84
 
-Report Created By cowuor Christine Owuor
-POWERGEN_FTTB_2023_2024-NBI249225-MOONZ PLAZA (SHIBAM Created: Tuesday, October 17, 2023
-RESTAURANT LTD)APPROVAL:
+Report Created By tchepkorir Susan Terer
+<TChepkorir@Safaricom.co.ke>
+EGYPRO_FTTB_2023_2024_NBI349232_ARCHDIOCESE OF NAIROBI_LITTLE Created: Wednesday, October 18, 2023
+PRINCE PRIMARY SCHOOL KIBERAAPPROVAL:
 Title Name Signature Date
 
 Planner (Contractor)
@@ -71,6 +73,7 @@ Safaricom Plc Manager
 Safaricom Plc Sn.
 Manager
 
-Report Created By cowuor Christine Owuor
-POWERGEN_FTTB_2023_2024-NBI249225-MOONZ PLAZA (SHIBAM Created: Tuesday, October 17, 2023
-RESTAURANT LTD)
+Report Created By tchepkorir Susan Terer
+<TChepkorir@Safaricom.co.ke>
+EGYPRO_FTTB_2023_2024_NBI349232_ARCHDIOCESE OF NAIROBI_LITTLE Created: Wednesday, October 18, 2023
+PRINCE PRIMARY SCHOOL KIBERA
