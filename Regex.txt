@@ -1,3 +1,4 @@
+PR Header
 version 1
 (?<=Name: )\w*-\w*-\w*.\w*.\w*\w*\W\w*\n\w*\W*\w*\w*\W*\W
 
@@ -9,3 +10,10 @@ Version 3
 
 Version 4
 (?<=Name: )\w*.{10}
+
+Partner
+Version 1
+(?<=Project leader: )\w*
+
+Building Name
+(?<=FTTB.\d{4}.\d{4}.)\w+

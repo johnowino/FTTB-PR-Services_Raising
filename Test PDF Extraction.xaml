@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Test_PDF_Extraction" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="603.3333333333334,905.3333333333334" sap2010:WorkflowViewState.IdRef="Test_PDF_Extraction_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Test_PDF_Extraction" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="603.3333333333334,1474.6666666666667" sap2010:WorkflowViewState.IdRef="Test_PDF_Extraction_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -115,23 +115,30 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Test_PDF_Extraction" sap:VirtualizedContainerService.HintSize="450,840.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Test_PDF_Extraction" sap:VirtualizedContainerService.HintSize="450,1410" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ExtractedData" />
       <Variable x:TypeArguments="x:String" Name="ExtractOCR" />
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
       <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="PrHeader" />
       <Variable x:TypeArguments="x:String" Name="outPrHeader" />
+      <Variable x:TypeArguments="x:String" Name="PartnerName" />
+      <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="outPartnerName" />
+      <Variable x:TypeArguments="x:String" Name="BuildingName" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text" FileName="CM Quotes\EGYPRO_FTTB_2023_2024_NBI349232_ARCHDIOCESE OF NAIROBI_LITTLE PRINCE PRIMARY SCHOOL KIBERA.pdf" sap:VirtualizedContainerService.HintSize="388,84" sap2010:WorkflowViewState.IdRef="ReadPDFText_1" Range="All" Text="[ExtractedData]" />
+    <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text - Read CM Quoates in PDF format" FileName="CM Quotes\EGYPRO_FTTB_2023_2024_NBI349232_ARCHDIOCESE OF NAIROBI_LITTLE PRINCE PRIMARY SCHOOL KIBERA.pdf" sap:VirtualizedContainerService.HintSize="388,84" sap2010:WorkflowViewState.IdRef="ReadPDFText_1" Range="All" Text="[ExtractedData]" />
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[ExtractedData]" />
-    <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="CM Quotes\Extracted.txt" sap:VirtualizedContainerService.HintSize="388,136.66666666666666" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[ExtractedData]" />
+    <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File - Tra" FileName="CM Quotes\Extracted.txt" sap:VirtualizedContainerService.HintSize="388,136.66666666666666" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[ExtractedData]" />
+    <ui:Matches BuilderPattern="(?&lt;=Project leader: )\w*" DisplayName="Find Matching Patterns - Partner_Name" FirstMatch="[PartnerName]" sap:VirtualizedContainerService.HintSize="388,60" sap2010:WorkflowViewState.IdRef="Matches_3" Input="[ExtractedData]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=Project leader: )\\w*&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=Project leader: )\w*" RegexOption="IgnoreCase, Compiled" Result="[outPartnerName]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;The rollout partner is: &quot;+PartnerName]" />
     <ui:Matches BuilderPattern="(?&lt;=Name: )\w*.{10}" DisplayName="Find Matching Patterns - PR Header" FirstMatch="[outPrHeader]" sap:VirtualizedContainerService.HintSize="388,60" sap2010:WorkflowViewState.IdRef="Matches_2" Input="[ExtractedData]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=Name: )\\w*.{10}&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=Name: )\w*.{10}" RegexOption="IgnoreCase, Compiled" Result="[PrHeader]" />
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;This is the extracted PR Header: &quot;+outPrHeader]" />
+    <ui:Matches BuilderPattern="(?&lt;=FTTB.\d{4}.\d{4}.)\w+" DisplayName="Find Matching Patterns - Building Name" FirstMatch="[BuildingName]" sap:VirtualizedContainerService.HintSize="388,60" sap2010:WorkflowViewState.IdRef="Matches_4" Input="[ExtractedData]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=FTTB.\\d{4}.\\d{4}.)\\w+&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=FTTB.\d{4}.\d{4}.)\w+" RegexOption="IgnoreCase, Compiled" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;The Building Name is: &quot;+BuildingName]" />
   </Sequence>
 </Activity>
