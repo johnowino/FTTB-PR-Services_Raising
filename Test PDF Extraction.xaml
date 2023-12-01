@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Test_PDF_Extraction" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="603.3333333333334,1474.6666666666667" sap2010:WorkflowViewState.IdRef="Test_PDF_Extraction_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Test_PDF_Extraction" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="603.3333333333334,2651.3333333333335" sap2010:WorkflowViewState.IdRef="Test_PDF_Extraction_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -48,6 +48,10 @@
       <x:String>UiPath.Excel.Activities</x:String>
       <x:String>System.Text.RegularExpressions</x:String>
       <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -113,32 +117,607 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Test_PDF_Extraction" sap:VirtualizedContainerService.HintSize="450,1410" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Test_PDF_Extraction" sap:VirtualizedContainerService.HintSize="496,2586.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ExtractedData" />
       <Variable x:TypeArguments="x:String" Name="ExtractOCR" />
-      <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+      <Variable x:TypeArguments="sd2:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
       <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="PrHeader" />
       <Variable x:TypeArguments="x:String" Name="outPrHeader" />
       <Variable x:TypeArguments="x:String" Name="PartnerName" />
       <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="outPartnerName" />
       <Variable x:TypeArguments="x:String" Name="BuildingName" />
+      <Variable x:TypeArguments="x:String" Name="NonBrownField" />
+      <Variable x:TypeArguments="x:String" Name="OutGetText" />
+      <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="OutBoq" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text - Read CM Quoates in PDF format" FileName="CM Quotes\EGYPRO_FTTB_2023_2024_NBI349232_ARCHDIOCESE OF NAIROBI_LITTLE PRINCE PRIMARY SCHOOL KIBERA.pdf" sap:VirtualizedContainerService.HintSize="388,84" sap2010:WorkflowViewState.IdRef="ReadPDFText_1" Range="All" Text="[ExtractedData]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[ExtractedData]" />
-    <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File - Tra" FileName="CM Quotes\Extracted.txt" sap:VirtualizedContainerService.HintSize="388,136.66666666666666" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[ExtractedData]" />
-    <ui:Matches BuilderPattern="(?&lt;=Project leader: )\w*" DisplayName="Find Matching Patterns - Partner_Name" FirstMatch="[PartnerName]" sap:VirtualizedContainerService.HintSize="388,60" sap2010:WorkflowViewState.IdRef="Matches_3" Input="[ExtractedData]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=Project leader: )\\w*&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=Project leader: )\w*" RegexOption="IgnoreCase, Compiled" Result="[outPartnerName]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;The rollout partner is: &quot;+PartnerName]" />
-    <ui:Matches BuilderPattern="(?&lt;=Name: )\w*.{10}" DisplayName="Find Matching Patterns - PR Header" FirstMatch="[outPrHeader]" sap:VirtualizedContainerService.HintSize="388,60" sap2010:WorkflowViewState.IdRef="Matches_2" Input="[ExtractedData]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=Name: )\\w*.{10}&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=Name: )\w*.{10}" RegexOption="IgnoreCase, Compiled" Result="[PrHeader]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;This is the extracted PR Header: &quot;+outPrHeader]" />
-    <ui:Matches BuilderPattern="(?&lt;=FTTB.\d{4}.\d{4}.)\w+" DisplayName="Find Matching Patterns - Building Name" FirstMatch="[BuildingName]" sap:VirtualizedContainerService.HintSize="388,60" sap2010:WorkflowViewState.IdRef="Matches_4" Input="[ExtractedData]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=FTTB.\\d{4}.\\d{4}.)\\w+&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=FTTB.\d{4}.\d{4}.)\w+" RegexOption="IgnoreCase, Compiled" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;The Building Name is: &quot;+BuildingName]" />
+    <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text - Read CM Quoates in PDF format" FileName="CM Quotes\EGYPRO_FTTB_2023_2024_NBI349232_ARCHDIOCESE OF NAIROBI_LITTLE PRINCE PRIMARY SCHOOL KIBERA.pdf" sap:VirtualizedContainerService.HintSize="434,84" sap2010:WorkflowViewState.IdRef="ReadPDFText_1" Range="All" Text="[ExtractedData]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[ExtractedData]" />
+    <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File - Tra" FileName="CM Quotes\Extracted.txt" sap:VirtualizedContainerService.HintSize="434,136.66666666666666" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[ExtractedData]" />
+    <ui:Matches BuilderPattern="(?&lt;=Project leader: )\w*" DisplayName="Find Matching Patterns - Partner_Name" FirstMatch="[PartnerName]" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Matches_3" Input="[ExtractedData]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=Project leader: )\\w*&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=Project leader: )\w*" RegexOption="IgnoreCase, Compiled" Result="[outPartnerName]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;The rollout partner is: &quot;+PartnerName]" />
+    <ui:Matches BuilderPattern="(?&lt;=Name: )\w*.{10}" DisplayName="Find Matching Patterns - PR Header" FirstMatch="[outPrHeader]" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Matches_2" Input="[ExtractedData]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=Name: )\\w*.{10}&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=Name: )\w*.{10}" RegexOption="IgnoreCase, Compiled" Result="[PrHeader]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;This is the extracted PR Header: &quot;+outPrHeader]" />
+    <ui:Matches BuilderPattern="(?&lt;=FTTB.\d{4}.\d{4}.)\w+" DisplayName="Find Matching Patterns - Building Name" FirstMatch="[BuildingName]" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Matches_4" Input="[ExtractedData]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=FTTB.\\d{4}.\\d{4}.)\\w+&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=FTTB.\d{4}.\d{4}.)\w+" RegexOption="IgnoreCase, Compiled" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;The Building Name is: &quot;+BuildingName]" />
+    <ui:Matches BuilderPattern="(?&lt;=Total Linearised Rate : Ksh .00\nItem Description UOM Price QTY Total\n).*\n" DisplayName="Find Matching Patterns - Non Brown Field details" FirstMatch="[NonBrownField]" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Matches_5" Input="[ExtractedData]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=Total Linearised Rate : Ksh .00\\nItem Description UOM Price QTY Total\\n).*\\n&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=Total Linearised Rate : Ksh .00\nItem Description UOM Price QTY Total\n).*\n" RegexOption="IgnoreCase, Compiled" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Draft extract of BoQ line; &quot;+NonBrownField]" />
+    <ui:Matches FirstMatch="{x:Null}" BuilderPattern=".?(Total Linea.*)*" DisplayName="Find Matching Patterns" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Matches_6" Input="[ExtractedData]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;.?(Total Linea.*)*&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern=".?(Total Linea.*)*" RegexOption="IgnoreCase, Compiled" Result="[OutBoq]" />
+    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="3a2cf968-35c6-4fdb-964b-054f3b60e640" DisplayName="CV Screen Scope 'grouping'" sap:VirtualizedContainerService.HintSize="434,567.3333333333334" sap2010:WorkflowViewState.IdRef="CVScope_1" SendOnPremData="False" Version="V6">
+      <p:CVScope.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" Descriptor="[&quot;Target: TableCell (62,198,524,444) Offset: (5,24,516,421)&quot; +&#xD;&#xA;&quot;ColumnNumber: 1 (62,198,266,20)&quot; +&#xD;&#xA;&quot;RowContains:  (512,198,74,20) RowCell: 5&quot;]" DesignTimeCacheId="3a2cf968-35c6-4fdb-964b-054f3b60e640" DesignTimeScaleFactor="1.5" DisplayName="CV Get Text - Table Cell" sap:VirtualizedContainerService.HintSize="400,226" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="a88520f8b0059429906ab7c3c111c2da" NumberOfScrolls="2" RefreshBefore="True" Result="[OutGetText]" ScrollDirection="None" Version="V6">
+              <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                <uc:CvDescriptor Id="13d3edca-96e9-4103-a47c-70c0a4e7059e" TargetOffset="5, 24, 516, 421">
+                  <uc:CvDescriptor.Target>
+                    <uc:CvElementDescriptor DesignTimeArea="62, 198, 524, 444" ElementType="TableCell">
+                      <uc:CvElementDescriptor.CellExtraInfo>
+                        <uc:CvCellExtraInfo CellArea="62, 198, 266, 20" ColumnArea="62, 198, 266, 20" ColumnIndex="1" ColumnName="" RowArea="512, 198, 74, 20" RowIndex="1" RowSearchColumnIndex="5" RowSearchValue="" UseColumnIndex="True" UseRowIndex="False" />
+                      </uc:CvElementDescriptor.CellExtraInfo>
+                    </uc:CvElementDescriptor>
+                  </uc:CvDescriptor.Target>
+                </uc:CvDescriptor>
+              </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+            </p:CvGetTextWithDescriptor>
+          </Sequence>
+        </ActivityAction>
+      </p:CVScope.Body>
+      <p:CVScope.DesignTimeCacheContainer>
+        <uc:CvCacheContainer>
+          <uc:CvCacheContainer.Caches>
+            <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
+              <uc:CVCache DataSent="False" DisplayName="Screen CV Get Text - Table Cel (Main)" Id="3a2cf968-35c6-4fdb-964b-054f3b60e640" InformativeScreenshot="4b6cdde113418e450dbc2f39e71bcfbc" LogicalPosition="441, -11" OcrText="vard Edward C X power bi service - Search X IMS Report_FY23-24 - Power X EGYPRO oocuments/UiPath/FTTB%20PR%20Raising/CM%20Quotes/EGYPRO_FTTB_2023_2024... - ugging this browser Cancel Ask Copilot ... + 2 of 4 Linearised Rate for Fiber Deployment Total Linearised Rate : Ksh Item Description UOM Price QTY Total Installation of Aerial Cable m 43.00 612 26,316.00 Installation of ATB pce 528.00 1 528.00 As-Built Documentation soft and hard copies BF m 5.28 3 15.84 GIS based survey &amp; design BF m 16.00 3 48.00 Project Management BF m 44.00 3 132.00 Trenching up to 1.2m deep. lay ducts and reinstate m 610.72 3 1,832.16 Supply, Install corrugated PVC pipe m 80.00 4 320.00 Supply, Install PlasticTrunking size 38*25mm m 90.00 64 5,760.00 As built documents m 5.28 259 1,367.52 Field detailed survey report m 16.00 259 4,144.00 Project Management Aerial Incl of H&amp;S per meter m 47.00 259 12,173.00 Pole Down-lead clamp. Supply and Installation pce 1,500.00 3 4,500.00 Pole Cable Bracket, Supply and Installation pce 2,200.00 3 6,600.00 Pole, Supply &amp; installation Wooden 8m pce 11,000.00 4 44,000.00 Pole Tangent Support, Supply and Installation pce 1,800.00 5 9,000.00 Supply and installation of Universal Pole bracket pce 1,250.00 11 13,750.00 Pole Tension Clamp, Supply and Installation pce 2,300.00 24 55,200.00 Core Drilling per unit pce 150.00 1 150.00 ISP Building As built documents per building pce 880.00 1 880.00 ISP Building Survey, Design per building pce 4,400.00 1 4,400.00 Splicing, Testing and Commissioning 1 Core pce 440.00 2 880.00 Total Brown Field : Ksh 191,996.52" Position="441, -11" ScaleFactor="1.5" ScreenshotGuid="08521eb6-3805-43e4-9b8a-8b1e0e18983e" ServerVersion="1">
+                <uc:CVCache.CvAnchorRelations>
+                  <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="4">
+                    <uc:AnchorRelationInfo IsTargetText="False" Target="15">
+                      <uc:AnchorRelationInfo.Anchors>
+                        <x:Array Type="x:Int32">
+                          <x:Int32>26</x:Int32>
+                        </x:Array>
+                      </uc:AnchorRelationInfo.Anchors>
+                    </uc:AnchorRelationInfo>
+                    <uc:AnchorRelationInfo IsTargetText="False" Target="23">
+                      <uc:AnchorRelationInfo.Anchors>
+                        <x:Array Type="x:Int32">
+                          <x:Int32>34</x:Int32>
+                          <x:Int32>35</x:Int32>
+                          <x:Int32>36</x:Int32>
+                        </x:Array>
+                      </uc:AnchorRelationInfo.Anchors>
+                    </uc:AnchorRelationInfo>
+                    <uc:AnchorRelationInfo IsTargetText="False" Target="22">
+                      <uc:AnchorRelationInfo.Anchors>
+                        <x:Array Type="x:Int32">
+                          <x:Int32>29</x:Int32>
+                          <x:Int32>30</x:Int32>
+                          <x:Int32>31</x:Int32>
+                          <x:Int32>32</x:Int32>
+                          <x:Int32>33</x:Int32>
+                        </x:Array>
+                      </uc:AnchorRelationInfo.Anchors>
+                    </uc:AnchorRelationInfo>
+                  </scg:List>
+                </uc:CVCache.CvAnchorRelations>
+                <uc:CVCache.CvTables>
+                  <x:Array Type="uc:CvTableInfo">
+                    <uc:CvTableInfo>
+                      <uc:CvTableInfo.Columns>
+                        <x:Array Type="x:Int32">
+                          <x:Int32>62</x:Int32>
+                          <x:Int32>328</x:Int32>
+                          <x:Int32>390</x:Int32>
+                          <x:Int32>452</x:Int32>
+                          <x:Int32>512</x:Int32>
+                          <x:Int32>586</x:Int32>
+                        </x:Array>
+                      </uc:CvTableInfo.Columns>
+                      <uc:CvTableInfo.Rows>
+                        <x:Array Type="x:Int32">
+                          <x:Int32>198</x:Int32>
+                          <x:Int32>218</x:Int32>
+                          <x:Int32>238</x:Int32>
+                          <x:Int32>258</x:Int32>
+                          <x:Int32>278</x:Int32>
+                          <x:Int32>296</x:Int32>
+                          <x:Int32>316</x:Int32>
+                          <x:Int32>334</x:Int32>
+                          <x:Int32>354</x:Int32>
+                          <x:Int32>372</x:Int32>
+                          <x:Int32>392</x:Int32>
+                          <x:Int32>410</x:Int32>
+                          <x:Int32>430</x:Int32>
+                          <x:Int32>448</x:Int32>
+                          <x:Int32>468</x:Int32>
+                          <x:Int32>486</x:Int32>
+                          <x:Int32>506</x:Int32>
+                          <x:Int32>526</x:Int32>
+                          <x:Int32>544</x:Int32>
+                          <x:Int32>564</x:Int32>
+                          <x:Int32>584</x:Int32>
+                          <x:Int32>602</x:Int32>
+                          <x:Int32>622</x:Int32>
+                          <x:Int32>642</x:Int32>
+                        </x:Array>
+                      </uc:CvTableInfo.Rows>
+                    </uc:CvTableInfo>
+                    <uc:CvTableInfo>
+                      <uc:CvTableInfo.Columns>
+                        <x:Array Type="x:Int32">
+                          <x:Int32>110</x:Int32>
+                          <x:Int32>390</x:Int32>
+                          <x:Int32>454</x:Int32>
+                          <x:Int32>510</x:Int32>
+                          <x:Int32>588</x:Int32>
+                          <x:Int32>592</x:Int32>
+                        </x:Array>
+                      </uc:CvTableInfo.Columns>
+                      <uc:CvTableInfo.Rows>
+                        <x:Array Type="x:Int32">
+                          <x:Int32>178</x:Int32>
+                          <x:Int32>198</x:Int32>
+                          <x:Int32>218</x:Int32>
+                        </x:Array>
+                      </uc:CvTableInfo.Rows>
+                    </uc:CvTableInfo>
+                  </x:Array>
+                </uc:CVCache.CvTables>
+                <uc:CVCache.CvUiElements>
+                  <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="256">
+                    <uc:CvElementInfo Category="Button" Region="143, 82, 70, 34" />
+                    <uc:CvElementInfo Category="Button" Region="104, 7, 222, 30" />
+                    <uc:CvElementInfo Category="Button" Region="327, 8, 222, 31" />
+                    <uc:CvElementInfo Category="Icon" Region="334, 11, 22, 22" />
+                    <uc:CvElementInfo Category="Icon" Region="587, 45, 24, 23" />
+                    <uc:CvElementInfo Category="CloseButton" Region="78, 14, 17, 17" />
+                    <uc:CvElementInfo Category="Icon" Region="420, 132, 22, 22" />
+                    <uc:CvElementInfo Category="CloseButton" Region="526, 14, 17, 17" />
+                    <uc:CvElementInfo Category="Icon" Region="286, 134, 22, 19" />
+                    <uc:CvElementInfo Category="Icon" Region="556, 10, 22, 22" />
+                    <uc:CvElementInfo Category="CloseButton" Region="302, 14, 18, 18" />
+                    <uc:CvElementInfo Category="Icon" Region="548, 46, 21, 21" />
+                    <uc:CvElementInfo Category="Icon" Region="112, 14, 17, 17" />
+                    <uc:CvElementInfo Category="Button" Region="548, 7, 85, 32" />
+                    <uc:CvElementInfo Category="Icon" Region="250, 134, 18, 18" />
+                    <uc:CvElementInfo Category="InputBox" Region="323, 126, 43, 34" />
+                    <uc:CvElementInfo Category="Button" Region="0, 8, 102, 30" />
+                    <uc:CvElementInfo Category="Icon" Region="464, 134, 22, 19" />
+                    <uc:CvElementInfo Category="InputBox" Region="0, 40, 620, 32" />
+                    <uc:CvElementInfo Category="Icon" Region="131, 136, 20, 14" />
+                    <uc:CvElementInfo Category="Icon" Region="0, 134, 15, 19" />
+                    <uc:CvElementInfo Category="MinimizeButton" Region="215, 134, 18, 16" />
+                    <uc:CvElementInfo Category="InputBox" Region="64, 181, 330, 20" />
+                    <uc:CvElementInfo Category="InputBox" Region="198, 201, 196, 17" />
+                    <uc:CvElementInfo Category="Cell" Region="63, 278, 266, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="63, 258, 266, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="63, 316, 266, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="390, 544, 63, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="63, 218, 266, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="63, 564, 266, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="452, 544, 60, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="63, 296, 266, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="63, 372, 266, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="390, 602, 63, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="63, 544, 266, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="63, 335, 266, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="452, 602, 60, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="513, 392, 74, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="63, 584, 266, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="63, 354, 266, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="390, 564, 63, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="390, 448, 63, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="390, 430, 63, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="452, 584, 60, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="452, 448, 60, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="390, 584, 63, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="329, 584, 60, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="452, 258, 60, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="513, 507, 74, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="452, 526, 60, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="63, 526, 266, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="390, 526, 63, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="513, 564, 74, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="63, 238, 266, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="452, 372, 60, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="513, 487, 74, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="390, 392, 63, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="513, 296, 74, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="452, 564, 60, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="452, 278, 60, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="513, 354, 74, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="390, 468, 63, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="63, 468, 266, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="390, 487, 63, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="452, 468, 60, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="63, 392, 266, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="452, 238, 60, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="329, 622, 60, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="513, 372, 74, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="513, 526, 74, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="452, 507, 60, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="329, 316, 60, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="513, 468, 74, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="390, 354, 63, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="390, 258, 63, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="452, 296, 60, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="329, 564, 60, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="513, 602, 74, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="513, 411, 74, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="329, 278, 60, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="329, 258, 60, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="329, 296, 60, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="513, 544, 74, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="54, 622, 275, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="390, 507, 63, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="329, 544, 60, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="329, 602, 60, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="390, 296, 63, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="452, 354, 60, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="390, 372, 63, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="452, 392, 60, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="329, 372, 60, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="329, 526, 60, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="513, 448, 74, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="513, 258, 74, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="390, 278, 63, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="390, 238, 63, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="329, 238, 60, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="63, 487, 266, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="513, 584, 74, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="63, 507, 266, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="63, 411, 266, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="452, 316, 60, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="329, 507, 60, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="513, 335, 74, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="329, 392, 60, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="513, 278, 74, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="329, 468, 60, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="390, 622, 63, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="390, 316, 63, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="513, 218, 74, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="329, 354, 60, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="452, 430, 60, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="390, 411, 63, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="513, 238, 74, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="513, 316, 74, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="329, 335, 60, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="329, 487, 60, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="329, 448, 60, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="452, 487, 60, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="63, 430, 266, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="452, 411, 60, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="390, 335, 63, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="452, 622, 60, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="329, 411, 60, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="513, 430, 74, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="329, 430, 60, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="63, 448, 266, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="452, 335, 60, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="513, 622, 74, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="57, 602, 274, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="510, 198, 76, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="391, 179, 64, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="455, 198, 56, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="329, 218, 60, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="330, 640, 61, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="452, 218, 60, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="110, 179, 281, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="455, 179, 56, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="510, 179, 76, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="390, 218, 63, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="391, 198, 64, 19" />
+                    <uc:CvElementInfo Category="Cell" Region="510, 640, 76, 20" />
+                    <uc:CvElementInfo Category="Cell" Region="110, 198, 281, 19" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="215, 136, 20, 16" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="324, 126, 42, 34" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="372, 135, 26, 17" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="199, 200, 195, 18" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="338, 136, 14, 16" />
+                    <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="0, 134, 15, 19" />
+                    <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="419, 132, 24, 23" />
+                    <uc:CvElementInfo Category="CloseButton" Confidence="Runtime" Region="0, 134, 15, 18" />
+                    <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="251, 134, 18, 18" />
+                    <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="392, 640, 61, 21" />
+                    <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="160, 640, 200, 20" />
+                    <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="509, 164, 80, 16" />
+                    <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="452, 640, 59, 19" />
+                    <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="396, 640, 140, 20" />
+                    <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="59, 162, 365, 18" />
+                  </scg:List>
+                </uc:CVCache.CvUiElements>
+                <uc:CVCache.OcrTexts>
+                  <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="252">
+                    <uc:OcrTextInfo Region="0, 16, 22, 12" Text="vard" />
+                    <uc:OcrTextInfo Region="24, 16, 40, 12" Text="Edward" />
+                    <uc:OcrTextInfo Region="66, 16, 8, 10" Text="C" />
+                    <uc:OcrTextInfo Region="82, 16, 10, 12" Text="X" />
+                    <uc:OcrTextInfo Region="138, 18, 34, 12" Text="power" />
+                    <uc:OcrTextInfo Region="174, 16, 12, 12" Text="bi" />
+                    <uc:OcrTextInfo Region="188, 16, 38, 12" Text="service" />
+                    <uc:OcrTextInfo Region="228, 18, 6, 10" Text="-" />
+                    <uc:OcrTextInfo Region="234, 16, 38, 12" Text="Search" />
+                    <uc:OcrTextInfo Region="306, 16, 10, 12" Text="X" />
+                    <uc:OcrTextInfo Region="362, 16, 20, 12" Text="IMS" />
+                    <uc:OcrTextInfo Region="386, 16, 84, 14" Text="Report_FY23-24" />
+                    <uc:OcrTextInfo Region="472, 16, 6, 10" Text="-" />
+                    <uc:OcrTextInfo Region="480, 16, 34, 12" Text="Power" />
+                    <uc:OcrTextInfo Region="528, 16, 10, 12" Text="X" />
+                    <uc:OcrTextInfo Region="584, 16, 46, 12" Text="EGYPRO" />
+                    <uc:OcrTextInfo Region="4, 50, 532, 16" Text="oocuments/UiPath/FTTB%20PR%20Raising/CM%20Quotes/EGYPRO_FTTB_2023_2024..." />
+                    <uc:OcrTextInfo Region="554, 52, 6, 6" Text="-" />
+                    <uc:OcrTextInfo Region="0, 92, 38, 16" Text="ugging" />
+                    <uc:OcrTextInfo Region="40, 92, 22, 12" Text="this" />
+                    <uc:OcrTextInfo Region="64, 92, 48, 12" Text="browser" />
+                    <uc:OcrTextInfo Region="160, 92, 38, 12" Text="Cancel" />
+                    <uc:OcrTextInfo Region="42, 138, 24, 14" Text="Ask" />
+                    <uc:OcrTextInfo Region="68, 138, 46, 16" Text="Copilot" />
+                    <uc:OcrTextInfo Region="132, 132, 18, 14" Text="..." />
+                    <uc:OcrTextInfo Region="252, 136, 14, 14" Text="+" />
+                    <uc:OcrTextInfo Region="340, 138, 8, 12" Text="2" />
+                    <uc:OcrTextInfo Region="374, 138, 12, 12" Text="of" />
+                    <uc:OcrTextInfo Region="388, 138, 8, 10" Text="4" />
+                    <uc:OcrTextInfo Region="64, 166, 52, 10" Text="Linearised" />
+                    <uc:OcrTextInfo Region="118, 166, 24, 10" Text="Rate" />
+                    <uc:OcrTextInfo Region="142, 166, 16, 10" Text="for" />
+                    <uc:OcrTextInfo Region="160, 166, 28, 10" Text="Fiber" />
+                    <uc:OcrTextInfo Region="188, 166, 62, 12" Text="Deployment" />
+                    <uc:OcrTextInfo Region="200, 204, 24, 10" Text="Total" />
+                    <uc:OcrTextInfo Region="226, 204, 50, 10" Text="Linearised" />
+                    <uc:OcrTextInfo Region="278, 204, 24, 10" Text="Rate" />
+                    <uc:OcrTextInfo Region="302, 206, 4, 8" Text=":" />
+                    <uc:OcrTextInfo Region="550, 204, 18, 10" Text="Ksh" />
+                    <uc:OcrTextInfo Region="66, 226, 22, 10" Text="Item" />
+                    <uc:OcrTextInfo Region="90, 226, 58, 12" Text="Description" />
+                    <uc:OcrTextInfo Region="350, 226, 26, 10" Text="UOM" />
+                    <uc:OcrTextInfo Region="412, 226, 26, 10" Text="Price" />
+                    <uc:OcrTextInfo Region="474, 226, 24, 10" Text="QTY" />
+                    <uc:OcrTextInfo Region="538, 226, 26, 10" Text="Total" />
+                    <uc:OcrTextInfo Region="64, 244, 52, 10" Text="Installation" />
+                    <uc:OcrTextInfo Region="116, 244, 12, 10" Text="of" />
+                    <uc:OcrTextInfo Region="128, 244, 28, 10" Text="Aerial" />
+                    <uc:OcrTextInfo Region="158, 244, 28, 10" Text="Cable" />
+                    <uc:OcrTextInfo Region="356, 246, 10, 8" Text="m" />
+                    <uc:OcrTextInfo Region="426, 244, 28, 10" Text="43.00" />
+                    <uc:OcrTextInfo Region="496, 244, 18, 10" Text="612" />
+                    <uc:OcrTextInfo Region="538, 244, 48, 12" Text="26,316.00" />
+                    <uc:OcrTextInfo Region="64, 264, 52, 10" Text="Installation" />
+                    <uc:OcrTextInfo Region="116, 264, 10, 10" Text="of" />
+                    <uc:OcrTextInfo Region="128, 264, 22, 10" Text="ATB" />
+                    <uc:OcrTextInfo Region="352, 266, 18, 10" Text="pce" />
+                    <uc:OcrTextInfo Region="422, 264, 34, 10" Text="528.00" />
+                    <uc:OcrTextInfo Region="508, 264, 6, 10" Text="1" />
+                    <uc:OcrTextInfo Region="552, 264, 34, 10" Text="528.00" />
+                    <uc:OcrTextInfo Region="64, 282, 38, 10" Text="As-Built" />
+                    <uc:OcrTextInfo Region="102, 282, 70, 10" Text="Documentation" />
+                    <uc:OcrTextInfo Region="174, 284, 18, 10" Text="soft" />
+                    <uc:OcrTextInfo Region="194, 284, 18, 10" Text="and" />
+                    <uc:OcrTextInfo Region="214, 284, 22, 10" Text="hard" />
+                    <uc:OcrTextInfo Region="238, 282, 32, 12" Text="copies" />
+                    <uc:OcrTextInfo Region="272, 282, 14, 10" Text="BF" />
+                    <uc:OcrTextInfo Region="356, 284, 10, 8" Text="m" />
+                    <uc:OcrTextInfo Region="434, 282, 22, 10" Text="5.28" />
+                    <uc:OcrTextInfo Region="508, 282, 8, 12" Text="3" />
+                    <uc:OcrTextInfo Region="560, 282, 26, 10" Text="15.84" />
+                    <uc:OcrTextInfo Region="64, 302, 18, 10" Text="GIS" />
+                    <uc:OcrTextInfo Region="84, 302, 30, 10" Text="based" />
+                    <uc:OcrTextInfo Region="116, 304, 32, 10" Text="survey" />
+                    <uc:OcrTextInfo Region="148, 302, 8, 10" Text="&amp;" />
+                    <uc:OcrTextInfo Region="158, 302, 32, 12" Text="design" />
+                    <uc:OcrTextInfo Region="192, 302, 16, 10" Text="BF" />
+                    <uc:OcrTextInfo Region="356, 304, 10, 8" Text="m" />
+                    <uc:OcrTextInfo Region="428, 302, 28, 10" Text="16.00" />
+                    <uc:OcrTextInfo Region="508, 302, 8, 12" Text="3" />
+                    <uc:OcrTextInfo Region="558, 302, 26, 10" Text="48.00" />
+                    <uc:OcrTextInfo Region="64, 320, 32, 12" Text="Project" />
+                    <uc:OcrTextInfo Region="98, 322, 62, 12" Text="Management" />
+                    <uc:OcrTextInfo Region="162, 322, 14, 10" Text="BF" />
+                    <uc:OcrTextInfo Region="356, 324, 10, 8" Text="m" />
+                    <uc:OcrTextInfo Region="426, 320, 28, 10" Text="44.00" />
+                    <uc:OcrTextInfo Region="508, 320, 8, 10" Text="3" />
+                    <uc:OcrTextInfo Region="554, 320, 32, 10" Text="132.00" />
+                    <uc:OcrTextInfo Region="64, 340, 48, 12" Text="Trenching" />
+                    <uc:OcrTextInfo Region="112, 342, 12, 10" Text="up" />
+                    <uc:OcrTextInfo Region="126, 340, 10, 10" Text="to" />
+                    <uc:OcrTextInfo Region="140, 340, 24, 10" Text="1.2m" />
+                    <uc:OcrTextInfo Region="164, 340, 26, 12" Text="deep." />
+                    <uc:OcrTextInfo Region="194, 340, 14, 12" Text="lay" />
+                    <uc:OcrTextInfo Region="210, 340, 26, 10" Text="ducts" />
+                    <uc:OcrTextInfo Region="238, 340, 18, 10" Text="and" />
+                    <uc:OcrTextInfo Region="258, 340, 40, 10" Text="reinstate" />
+                    <uc:OcrTextInfo Region="356, 342, 10, 8" Text="m" />
+                    <uc:OcrTextInfo Region="422, 340, 34, 10" Text="610.72" />
+                    <uc:OcrTextInfo Region="508, 340, 8, 10" Text="3" />
+                    <uc:OcrTextInfo Region="544, 340, 42, 10" Text="1,832.16" />
+                    <uc:OcrTextInfo Region="64, 360, 36, 12" Text="Supply," />
+                    <uc:OcrTextInfo Region="100, 360, 28, 10" Text="Install" />
+                    <uc:OcrTextInfo Region="130, 360, 52, 12" Text="corrugated" />
+                    <uc:OcrTextInfo Region="184, 360, 22, 10" Text="PVC" />
+                    <uc:OcrTextInfo Region="208, 360, 22, 12" Text="pipe" />
+                    <uc:OcrTextInfo Region="356, 362, 10, 8" Text="m" />
+                    <uc:OcrTextInfo Region="428, 360, 28, 10" Text="80.00" />
+                    <uc:OcrTextInfo Region="508, 360, 8, 10" Text="4" />
+                    <uc:OcrTextInfo Region="552, 360, 34, 10" Text="320.00" />
+                    <uc:OcrTextInfo Region="64, 378, 36, 12" Text="Supply," />
+                    <uc:OcrTextInfo Region="100, 378, 28, 10" Text="Install" />
+                    <uc:OcrTextInfo Region="130, 378, 74, 12" Text="PlasticTrunking" />
+                    <uc:OcrTextInfo Region="204, 378, 20, 10" Text="size" />
+                    <uc:OcrTextInfo Region="226, 378, 46, 10" Text="38*25mm" />
+                    <uc:OcrTextInfo Region="356, 382, 10, 6" Text="m" />
+                    <uc:OcrTextInfo Region="428, 378, 26, 10" Text="90.00" />
+                    <uc:OcrTextInfo Region="502, 378, 12, 10" Text="64" />
+                    <uc:OcrTextInfo Region="544, 378, 42, 12" Text="5,760.00" />
+                    <uc:OcrTextInfo Region="66, 398, 12, 10" Text="As" />
+                    <uc:OcrTextInfo Region="82, 398, 20, 10" Text="built" />
+                    <uc:OcrTextInfo Region="102, 398, 54, 10" Text="documents" />
+                    <uc:OcrTextInfo Region="356, 400, 10, 8" Text="m" />
+                    <uc:OcrTextInfo Region="434, 398, 20, 10" Text="5.28" />
+                    <uc:OcrTextInfo Region="496, 398, 18, 10" Text="259" />
+                    <uc:OcrTextInfo Region="546, 398, 40, 10" Text="1,367.52" />
+                    <uc:OcrTextInfo Region="66, 416, 24, 10" Text="Field" />
+                    <uc:OcrTextInfo Region="92, 416, 38, 10" Text="detailed" />
+                    <uc:OcrTextInfo Region="132, 418, 32, 10" Text="survey" />
+                    <uc:OcrTextInfo Region="164, 418, 28, 12" Text="report" />
+                    <uc:OcrTextInfo Region="356, 420, 10, 6" Text="m" />
+                    <uc:OcrTextInfo Region="428, 416, 26, 10" Text="16.00" />
+                    <uc:OcrTextInfo Region="496, 418, 18, 10" Text="259" />
+                    <uc:OcrTextInfo Region="544, 416, 42, 12" Text="4,144.00" />
+                    <uc:OcrTextInfo Region="64, 436, 32, 12" Text="Project" />
+                    <uc:OcrTextInfo Region="98, 436, 62, 12" Text="Management" />
+                    <uc:OcrTextInfo Region="162, 436, 28, 10" Text="Aerial" />
+                    <uc:OcrTextInfo Region="192, 436, 18, 10" Text="Incl" />
+                    <uc:OcrTextInfo Region="210, 436, 10, 10" Text="of" />
+                    <uc:OcrTextInfo Region="222, 436, 22, 10" Text="H&amp;S" />
+                    <uc:OcrTextInfo Region="246, 438, 16, 10" Text="per" />
+                    <uc:OcrTextInfo Region="264, 436, 28, 10" Text="meter" />
+                    <uc:OcrTextInfo Region="356, 438, 10, 8" Text="m" />
+                    <uc:OcrTextInfo Region="426, 436, 28, 10" Text="47.00" />
+                    <uc:OcrTextInfo Region="496, 436, 18, 10" Text="259" />
+                    <uc:OcrTextInfo Region="538, 436, 48, 12" Text="12,173.00" />
+                    <uc:OcrTextInfo Region="64, 456, 20, 10" Text="Pole" />
+                    <uc:OcrTextInfo Region="88, 456, 50, 10" Text="Down-lead" />
+                    <uc:OcrTextInfo Region="140, 456, 32, 12" Text="clamp." />
+                    <uc:OcrTextInfo Region="174, 456, 32, 12" Text="Supply" />
+                    <uc:OcrTextInfo Region="208, 456, 18, 8" Text="and" />
+                    <uc:OcrTextInfo Region="228, 456, 52, 10" Text="Installation" />
+                    <uc:OcrTextInfo Region="352, 458, 18, 10" Text="pce" />
+                    <uc:OcrTextInfo Region="412, 454, 42, 12" Text="1,500.00" />
+                    <uc:OcrTextInfo Region="508, 456, 6, 10" Text="3" />
+                    <uc:OcrTextInfo Region="544, 456, 42, 10" Text="4,500.00" />
+                    <uc:OcrTextInfo Region="64, 474, 22, 10" Text="Pole" />
+                    <uc:OcrTextInfo Region="88, 474, 28, 10" Text="Cable" />
+                    <uc:OcrTextInfo Region="118, 474, 38, 12" Text="Bracket," />
+                    <uc:OcrTextInfo Region="158, 474, 32, 12" Text="Supply" />
+                    <uc:OcrTextInfo Region="192, 476, 18, 10" Text="and" />
+                    <uc:OcrTextInfo Region="212, 476, 52, 8" Text="Installation" />
+                    <uc:OcrTextInfo Region="352, 476, 18, 10" Text="pce" />
+                    <uc:OcrTextInfo Region="412, 474, 44, 12" Text="2,200.00" />
+                    <uc:OcrTextInfo Region="508, 474, 6, 10" Text="3" />
+                    <uc:OcrTextInfo Region="544, 474, 42, 12" Text="6,600.00" />
+                    <uc:OcrTextInfo Region="64, 494, 24, 10" Text="Pole," />
+                    <uc:OcrTextInfo Region="90, 494, 34, 12" Text="Supply" />
+                    <uc:OcrTextInfo Region="124, 494, 8, 10" Text="&amp;" />
+                    <uc:OcrTextInfo Region="134, 494, 50, 10" Text="installation" />
+                    <uc:OcrTextInfo Region="186, 494, 40, 10" Text="Wooden" />
+                    <uc:OcrTextInfo Region="228, 494, 16, 10" Text="8m" />
+                    <uc:OcrTextInfo Region="352, 496, 18, 10" Text="pce" />
+                    <uc:OcrTextInfo Region="408, 492, 48, 12" Text="11,000.00" />
+                    <uc:OcrTextInfo Region="508, 494, 8, 10" Text="4" />
+                    <uc:OcrTextInfo Region="538, 492, 48, 12" Text="44,000.00" />
+                    <uc:OcrTextInfo Region="64, 512, 20, 10" Text="Pole" />
+                    <uc:OcrTextInfo Region="86, 512, 40, 12" Text="Tangent" />
+                    <uc:OcrTextInfo Region="128, 512, 40, 12" Text="Support," />
+                    <uc:OcrTextInfo Region="170, 512, 32, 12" Text="Supply" />
+                    <uc:OcrTextInfo Region="204, 514, 18, 10" Text="and" />
+                    <uc:OcrTextInfo Region="226, 512, 50, 10" Text="Installation" />
+                    <uc:OcrTextInfo Region="352, 514, 18, 10" Text="pce" />
+                    <uc:OcrTextInfo Region="412, 512, 42, 10" Text="1,800.00" />
+                    <uc:OcrTextInfo Region="508, 512, 8, 10" Text="5" />
+                    <uc:OcrTextInfo Region="544, 512, 42, 10" Text="9,000.00" />
+                    <uc:OcrTextInfo Region="64, 532, 34, 12" Text="Supply" />
+                    <uc:OcrTextInfo Region="98, 532, 18, 10" Text="and" />
+                    <uc:OcrTextInfo Region="118, 532, 50, 10" Text="installation" />
+                    <uc:OcrTextInfo Region="170, 532, 10, 10" Text="of" />
+                    <uc:OcrTextInfo Region="182, 532, 44, 10" Text="Universal" />
+                    <uc:OcrTextInfo Region="228, 532, 22, 10" Text="Pole" />
+                    <uc:OcrTextInfo Region="252, 532, 36, 10" Text="bracket" />
+                    <uc:OcrTextInfo Region="352, 534, 18, 8" Text="pce" />
+                    <uc:OcrTextInfo Region="412, 532, 42, 12" Text="1,250.00" />
+                    <uc:OcrTextInfo Region="504, 532, 10, 10" Text="11" />
+                    <uc:OcrTextInfo Region="538, 532, 48, 12" Text="13,750.00" />
+                    <uc:OcrTextInfo Region="64, 552, 22, 10" Text="Pole" />
+                    <uc:OcrTextInfo Region="86, 552, 38, 10" Text="Tension" />
+                    <uc:OcrTextInfo Region="126, 552, 34, 12" Text="Clamp," />
+                    <uc:OcrTextInfo Region="162, 552, 34, 12" Text="Supply" />
+                    <uc:OcrTextInfo Region="198, 552, 18, 10" Text="and" />
+                    <uc:OcrTextInfo Region="218, 552, 52, 10" Text="Installation" />
+                    <uc:OcrTextInfo Region="352, 554, 18, 10" Text="pce" />
+                    <uc:OcrTextInfo Region="412, 550, 42, 12" Text="2,300.00" />
+                    <uc:OcrTextInfo Region="502, 552, 12, 10" Text="24" />
+                    <uc:OcrTextInfo Region="538, 552, 48, 12" Text="55,200.00" />
+                    <uc:OcrTextInfo Region="64, 570, 24, 10" Text="Core" />
+                    <uc:OcrTextInfo Region="88, 570, 32, 12" Text="Drilling" />
+                    <uc:OcrTextInfo Region="122, 572, 18, 10" Text="per" />
+                    <uc:OcrTextInfo Region="142, 570, 18, 10" Text="unit" />
+                    <uc:OcrTextInfo Region="352, 572, 18, 8" Text="pce" />
+                    <uc:OcrTextInfo Region="422, 570, 32, 10" Text="150.00" />
+                    <uc:OcrTextInfo Region="508, 570, 6, 10" Text="1" />
+                    <uc:OcrTextInfo Region="554, 570, 32, 10" Text="150.00" />
+                    <uc:OcrTextInfo Region="64, 590, 16, 10" Text="ISP" />
+                    <uc:OcrTextInfo Region="84, 590, 38, 12" Text="Building" />
+                    <uc:OcrTextInfo Region="122, 590, 14, 10" Text="As" />
+                    <uc:OcrTextInfo Region="138, 590, 20, 10" Text="built" />
+                    <uc:OcrTextInfo Region="160, 590, 52, 10" Text="documents" />
+                    <uc:OcrTextInfo Region="214, 592, 16, 10" Text="per" />
+                    <uc:OcrTextInfo Region="232, 590, 38, 12" Text="building" />
+                    <uc:OcrTextInfo Region="352, 592, 18, 10" Text="pce" />
+                    <uc:OcrTextInfo Region="422, 590, 34, 10" Text="880.00" />
+                    <uc:OcrTextInfo Region="508, 590, 6, 10" Text="1" />
+                    <uc:OcrTextInfo Region="552, 588, 34, 10" Text="880.00" />
+                    <uc:OcrTextInfo Region="64, 608, 16, 10" Text="ISP" />
+                    <uc:OcrTextInfo Region="84, 608, 38, 12" Text="Building" />
+                    <uc:OcrTextInfo Region="122, 608, 36, 12" Text="Survey," />
+                    <uc:OcrTextInfo Region="160, 608, 34, 12" Text="Design" />
+                    <uc:OcrTextInfo Region="196, 610, 18, 10" Text="per" />
+                    <uc:OcrTextInfo Region="214, 608, 36, 12" Text="building" />
+                    <uc:OcrTextInfo Region="352, 610, 18, 10" Text="pce" />
+                    <uc:OcrTextInfo Region="412, 608, 42, 12" Text="4,400.00" />
+                    <uc:OcrTextInfo Region="508, 608, 6, 10" Text="1" />
+                    <uc:OcrTextInfo Region="544, 608, 42, 12" Text="4,400.00" />
+                    <uc:OcrTextInfo Region="64, 628, 40, 12" Text="Splicing," />
+                    <uc:OcrTextInfo Region="106, 628, 36, 12" Text="Testing" />
+                    <uc:OcrTextInfo Region="142, 628, 18, 10" Text="and" />
+                    <uc:OcrTextInfo Region="162, 628, 72, 12" Text="Commissioning" />
+                    <uc:OcrTextInfo Region="240, 628, 6, 8" Text="1" />
+                    <uc:OcrTextInfo Region="248, 628, 24, 10" Text="Core" />
+                    <uc:OcrTextInfo Region="352, 630, 18, 10" Text="pce" />
+                    <uc:OcrTextInfo Region="422, 628, 32, 10" Text="440.00" />
+                    <uc:OcrTextInfo Region="508, 628, 8, 10" Text="2" />
+                    <uc:OcrTextInfo Region="552, 628, 34, 10" Text="880.00" />
+                    <uc:OcrTextInfo Region="202, 646, 24, 10" Text="Total" />
+                    <uc:OcrTextInfo Region="228, 646, 30, 10" Text="Brown" />
+                    <uc:OcrTextInfo Region="260, 646, 24, 10" Text="Field" />
+                    <uc:OcrTextInfo Region="286, 646, 4, 10" Text=":" />
+                    <uc:OcrTextInfo Region="514, 646, 18, 10" Text="Ksh" />
+                    <uc:OcrTextInfo Region="534, 646, 52, 10" Text="191,996.52" />
+                  </scg:List>
+                </uc:CVCache.OcrTexts>
+              </uc:CVCache>
+            </scg:List>
+          </uc:CvCacheContainer.Caches>
+        </uc:CvCacheContainer>
+      </p:CVScope.DesignTimeCacheContainer>
+      <p:CVScope.OCREngine>
+        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+          <ActivityFunc.Argument>
+            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+          </ActivityFunc.Argument>
+          <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,25.333333333333332" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_1" Image="[Image]" Language="en" NoopExecution="False" Profile="Screen" Scale="1" Timeout="100000" />
+        </ActivityFunc>
+      </p:CVScope.OCREngine>
+      <p:CVScope.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d10c243f-219f-4287-97ce-1ba069b87544" InformativeScreenshot="78faf22fa4353b28658d7130aebdceea" Selector="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='EGYPRO_FTTB_2023_2024_NBI349232_ARCHDIOCESE OF NAIROBI_LITTLE PR*' /&gt;&lt;ctrl name='EGYPRO_FTTB_2023_2024_NBI349232_ARCHDIOCESE OF NAIROBI_LITTLE PR*' role='document' /&gt;&lt;ctrl idx='11' role='grouping' /&gt;" WaitForReady="INTERACTIVE">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+        </ui:Target>
+      </p:CVScope.Target>
+      <p:CVScope.UseLocalServer>
+        <InArgument x:TypeArguments="x:Boolean" />
+      </p:CVScope.UseLocalServer>
+    </p:CVScope>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Extracted via Get Text is: &quot;+OutGetText]" />
   </Sequence>
 </Activity>

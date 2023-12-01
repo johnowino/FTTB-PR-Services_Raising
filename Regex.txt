@@ -17,3 +17,8 @@ Version 1
 
 Building Name
 (?<=FTTB.\d{4}.\d{4}.)\w+
+
+Bill of Materials description
+(?<=Item Description UOM Price QTY Total\n)\w*\D*
+
+
